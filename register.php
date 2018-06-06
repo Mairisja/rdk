@@ -136,12 +136,12 @@
                   </div>
                   <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                      <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Parole">
+                      <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Atkārtota parole">
                     </div>
                   </div>
                 </div>
                 
-                <input type="submit" value="Register" class="btn btn-info btn-block">
+                <input type="submit" value="Reģistrēties" class="btn btn-info btn-block">
               
               </form>
             </div>
