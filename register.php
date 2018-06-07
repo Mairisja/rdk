@@ -24,8 +24,8 @@
 
 <?php
   $servername = "localhost";
-  $username = "GUESS_WHAT_COMES_HERE";
-  $password = "BRUTEFORCE";
+  $username = "root";
+  $password = "GT5364HY";
 
   // Create connection
   $conn = new mysqli($servername, $username, $password);
