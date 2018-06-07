@@ -26,13 +26,7 @@
   </head>
 
 <body>
-  <?php
-    if(isset($_POST['save']))
-    {
-      $sql = "INSERT INTO users (vards, uzvards, apasts)
-        VALUES ('".$_POST["vards"]."','".$_POST["uzvards"]."','".$_POST["epasts"]."')";
-    }
-  ?>
+
   <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
