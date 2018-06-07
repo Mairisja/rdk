@@ -16,6 +16,13 @@ if(isset($_POST['first_name','last_name','email','password','password_confirmati
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
+
+  $user = htmlentities(mysql_real_escape_string($vards));
+  mysql_query(INSERT INTO users(vards) VALUES('$vards') echo "Submitted.");
+  $user = htmlentities(mysql_real_escape_string($uzvards));
+  mysql_query(INSERT INTO users(uzvards) VALUES('$uzvards') echo "Submitted.");
+  $user = htmlentities(mysql_real_escape_string($vards));
+  mysql_query(INSERT INTO users(epasts) VALUES('$epasts') echo "Submitted.");
 }
 else{
 	/* check connection */
