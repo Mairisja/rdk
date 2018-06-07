@@ -2,6 +2,8 @@
 
 
 <?php
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
 // we get submitted data and check if user really submitted it
 if(isset($_GET['first_name'])){
 $user = $_GET['first_name'];
