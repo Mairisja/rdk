@@ -7,13 +7,16 @@ if(isset($_GET['first_name'])){
 $user = $_GET['first_name'];
 
 // make an mysql connection, make sure to edit this
-mysql_connect("localhost", "root", "GT5364HY"); // host = host name, user = database user, password = database password
-mysql_select_db("rdk_db"); // database = mysql database name
+// $c = mysql_connect("localhost", "root", "GT5364HY"); // host = host name, user = database user, password = database password
+$con=mysqli_connect("localhost","root","GT5364HY","rdk_db");
+// mysql_select_db("rdk_db"); // database = mysql database name
 
 // escape input from dangerous charachters
 $user = htmlentities(mysql_real_escape_string($user));
 
-mysql_query("INSERT INTO users(vards,uzvards,epasts) VALUES('blabla','x','y')");
+mysqli_query($con,"INSERT INTO users(vards,uzvards,epasts) VALUES('blabla','x','y')");
+mysqli_commit($con);
+
 echo ("Submitted."); 
 
 }
