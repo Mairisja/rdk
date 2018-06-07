@@ -13,7 +13,7 @@ mysql_select_db("rdk_db"); // database = mysql database name
 // escape input from dangerous charachters
 $user = htmlentities(mysql_real_escape_string($user));
 
-mysql_query("INSERT INTO users(vards) VALUES('$first_name')");
+mysql_query("INSERT INTO users(vards,uzvards,epasts) VALUES('blabla','x','y')");
 echo ("Submitted."); 
 
 }
