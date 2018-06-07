@@ -24,14 +24,5 @@ if(isset($_POST['first_name','last_name','email','password','password_confirmati
   $user = htmlentities(mysql_real_escape_string($vards));
   mysql_query(INSERT INTO users(epasts) VALUES('$epasts') echo "Submitted.");
 }
-else{
-	/* check connection */
-	if (mysqli_connect_errno()) {
-	    printf("Connect failed: %s\n", mysqli_connect_error());
-	    exit();
-	}
-	else{
-		die("Nekas nav iesūtīts");
-	}
 ?>
 
