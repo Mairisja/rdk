@@ -24,17 +24,17 @@
 
 <?php
   $servername = "localhost";
-  $username = "root";
-  $password = "GT5364HY";
+  $username = "GUESS_WHAT_COMES_HERE";
+  $password = "BRUTEFORCE";
 
   // Create connection
   $conn = new mysqli($servername, $username, $password);
 
-  // Check connection
-  if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-  } 
-  echo "Connected successfully";
+  // // Check connection
+  // if ($conn->connect_error) {
+  //     die("Connection failed: " . $conn->connect_error);
+  // } 
+  // echo "Connected successfully";
 ?>
 
   <body>
