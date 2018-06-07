@@ -3,7 +3,7 @@
 
 <?php
 // we get submitted data and check if user really submitted it
-if(isset($_GET['first_name']){
+if(isset($_GET['first_name'])){
 $user = $_GET['first_name'];
 
 // make an mysql connection, make sure to edit this
@@ -29,7 +29,7 @@ die("You have not submitted anything.");
 
 
 
-// <!-- <?php
+<!-- <?php
 
 // if(isset($_POST['first_name','last_name','email','password','password_confirmation'])){
 	// $vards = $_POST['first_name'],

@@ -2,8 +2,10 @@
 
 <?php
   session_start();
-  include_once 'dbConfig.php';
+  include_once 'db_config.php';
+
 ?>
+
 <!-- __________________________________________END OF SESSION START __________________________________________________________________________ -->
 
 
