@@ -14,7 +14,7 @@ $con=mysqli_connect("localhost","root","GT5364HY","rdk_db");
 // mysql_select_db("rdk_db"); // database = mysql database name
 echo "xxx2";
 // escape input from dangerous charachters
-$user = htmlentities(mysql_real_escape_string($user));
+// $user = htmlentities(mysql_real_escape_string($user));
 echo "xxx3";
 mysqli_query($con,"INSERT INTO users(vards,uzvards,epasts) VALUES('blabla','x','y')");
 echo "xxx3";
