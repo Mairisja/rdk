@@ -25,7 +25,7 @@
 <?php
   $servername = "localhost";
   $username = "root";
-  $password = "changeme";
+  $password = "GT5364HY";
 
   // Create connection
   $conn = new mysqli($servername, $username, $password);
