@@ -1,10 +1,10 @@
 <!-- __________________________________________CONNECTION TO SQL __________________________________________________________________________ -->
 
 <?php
-
+$input = ($_REQUEST['password'])
 function secured_hash($input)
 {    
-$output = password_hash(($_REQUEST['password']),PASSWORD_DEFAULT);
+$output = password_hash(($input,PASSWORD_DEFAULT);
 return $output;
 }
 
