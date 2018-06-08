@@ -19,6 +19,7 @@ $password = mysqli_real_escape_string($link, password_hash($_REQUEST['password']
 
 if ($email = mysqli_query($link,"SELECT * FROM users WHERE epasts='$email")){
 	echo "Fuck, jau aizņemts!";
+	eader('Location: services.php'); 
 }
 else{
 $sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$password')";
