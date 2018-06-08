@@ -20,7 +20,7 @@ $sql_check = "SELECT * FROM users WHERE epasts='$email'";
 echo "KKK01";
 $result_email = mysqli_query($link, $sql_check);
 echo "KKK1";
-	if (mysql_num_rows($link, $result_email)> 0) {
+	if (mysql_num_rows($result_email)> 0) {
 		echo "Lietotājs ar šādu epastu jau ir reģistrēts!";
 	}
 	else{
