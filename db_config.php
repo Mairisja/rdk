@@ -20,7 +20,8 @@ echo "xxx2";
 // escape input from dangerous charachters
 // $user = htmlentities(mysql_real_escape_string($user));
 echo "xxx3";
-mysqli_query($con,"INSERT INTO users(vards,uzvards,epasts) VALUES('$vards','$uzvards','$epasts','$parole')");
+mysqli_query($con,"INSERT INTO users(vards,uzvards,epasts) 
+	VALUES($vards,$uzvards,$epasts)");
 echo "xxx3";
 mysqli_commit($con);
 
