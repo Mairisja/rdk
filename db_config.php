@@ -19,7 +19,7 @@ echo "$email";
 $sql_check = "SELECT * FROM users WHERE epasts=$email";
 echo "$sql_check";
 $result_email = mysqli_query($link, $sql_check);
-echo "KKK1";
+echo "$result_email";
 	if (mysql_num_rows($result_email)> 0) {
 		echo "Lietotājs ar šādu epastu jau ir reģistrēts!";
 	}
