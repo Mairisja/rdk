@@ -25,6 +25,7 @@ else{
 $sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$password')";
 if(mysqli_query($link, $sql)){
     echo "Records added successfully.";
+    header('Location: success.php'); 
     echo "kk3";
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
@@ -35,4 +36,3 @@ if(mysqli_query($link, $sql)){
 // close connection
 mysqli_close($link);
 ?>
-
