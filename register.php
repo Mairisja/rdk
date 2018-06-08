@@ -35,7 +35,7 @@ if (isset($_POST['save'])) {
   $sql = "INSERT INTO users (vards, uzvards, epasts)
     VALUES ('".$_POST["first_name"]."','".$_POST["last_name"]."','".$_POST["email"]."')";
 
-  $result = mysql_query($conn,$sq);
+  $result = mysql_query($conn,$sql);
   echo "xxx1";
 }
 
