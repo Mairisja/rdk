@@ -19,14 +19,17 @@ $password = mysqli_real_escape_string($link, password_hash($_REQUEST['password']
 
  
 // attempt insert query execution
-$sql_check = "SELECT FROM users (vards, uzvards, epasts, parole) WHERE epasts=('$email')";
+$sql_check = "SELECT FROM users (vards, uzvards, epasts, parole) WHERE epasts=$email";
 $sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$password')";
-if(mysqli_query($link, $sql_check)){
-	mysql_query($sql);
-    echo "Records added successfully.";
-} else{
-	header('Location: register.php');
-    echo "ERROR: User with this email already exists! " . mysqli_error($link);
+if (mysql_num_rows($sql_check)>=1){
+	echo "User with this email already exists!";
+}
+else{
+	if(mysqli_query($link, $sql)){
+	    echo "Records added successfully.";
+	} else{
+	    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+	}
 }
  
 // close connection
