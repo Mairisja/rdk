@@ -23,6 +23,7 @@ $sql_check = "SELECT FROM users (vards, uzvards, epasts, parole) WHERE epasts=('
 $sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$password')";
 if (mysql_num_rows($link, $sql_check)>=1){
 	echo "User with this email already exists!";
+	header('Location: success.php'); 
 }
 else{
 	if(mysqli_query($link, $sql)){
