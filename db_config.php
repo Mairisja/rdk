@@ -22,7 +22,7 @@ $password = mysqli_real_escape_string($link, password_hash($_REQUEST['password']
 $sql_check = "SELECT FROM users (vards, uzvards, epasts, parole) WHERE epasts=$email";
 $sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$password')";
 if(mysqli_query($link, $sql_check)){
-	mysql_query($sql)
+	mysql_query($sql);
     echo "Records added successfully.";
 } else{
     echo "ERROR: User with this email already exists! " . mysqli_error($link);
