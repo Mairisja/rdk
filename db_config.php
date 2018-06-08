@@ -19,8 +19,8 @@ $password = mysqli_real_escape_string($link, password_hash($_REQUEST['password']
 
  
 // attempt insert query execution
-$sql_check = "SELECT FROM users (vards, uzvards, epasts, parole) WHERE epasts=$email";
-if (mysql_num_rows($link, $sql_check)>=1){
+$sql_check = "SELECT FROM users (epasts) WHERE epasts=$email";
+if ($link, mysql_num_rows($sql_check)>=1){
 	echo "User with this email already exists!";
 	header('Location: success.php'); 
 }
