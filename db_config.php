@@ -18,7 +18,7 @@ $password = mysqli_real_escape_string($link, password_hash($_REQUEST['password']
 echo "$email";
 $sql_check = "SELECT * FROM users WHERE epasts=$email";
 echo "$sql_check";
-$result_email = mysqli_query($sql_check);
+$result_email = mysqli_query($link,$sql_check);
 echo "$result_email";
 	if (mysql_num_rows($result_email)> 0) {
 		echo "Lietotājs ar šādu epastu jau ir reģistrēts!";
