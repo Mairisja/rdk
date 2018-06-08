@@ -8,18 +8,13 @@ if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
-$input = mysql_real_escape_string($link, $_REQUEST['password']);
-function secured_hash($input)
-{    
-$output = password_hash($input,PASSWORD_DEFAULT);
-return $output;
-}
+
 
 // Escape user inputs for security
 $first_name = mysqli_real_escape_string($link, $_REQUEST['first_name']);
 $last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
 $email = mysqli_real_escape_string($link, $_REQUEST['email']);
-// $password = mysqli_real_escape_string($link, $_REQUEST['password']);
+$password = mysqli_real_escape_string($link, $_REQUEST['password']);
 
 
  
