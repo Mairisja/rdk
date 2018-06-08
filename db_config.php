@@ -29,10 +29,10 @@ mysqli_commit($con);
 echo ("Submitted."); 
 
 }
-else{
-// else print "you have not submitted anything
-die("You have not submitted anything.");
-}
+// else{
+// // else print "you have not submitted anything
+// die("You have not submitted anything.");
+// }
 echo "xxx4";
 ?>
 
