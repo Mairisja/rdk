@@ -25,21 +25,22 @@ $mail_check = mysqli_query($link,"SELECT * FROM users WHERE epasts='$email");
 if ($email = $mail_check ){
 	echo "Fuck, jau aizņemts!";
 	eader('Location: services.php'); 
+	exit();
 }
 //==============================================//    END OF CHECK DB FOR EXISTING MAIL //================================================
 
 
 
 else{
-$sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$password')";
-if(mysqli_query($link, $sql)){
-    echo "Records added successfully.";
-    header('Location: success.php'); 
-    echo "kk3";
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-    echo "kk4";
-}
+	$sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$password')";
+	if(mysqli_query($link, $sql)){
+	    echo "Records added successfully.";
+	    header('Location: success.php'); 
+	    echo "kk3";
+	} else{
+	    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+	    echo "kk4";
+	}
 }
  
 // close connection
