@@ -29,14 +29,16 @@
 <body>
 
 <?php
-
+echo "xxx1";
 if (isset($_POST['save'])) {
+  echo "xxx2";
   include_once('db_config.php');
+  echo "xxx3";
   $sql = "INSERT INTO users (vards, uzvards, epasts)
     VALUES ('".$_POST["first_name"]."','".$_POST["last_name"]."','".$_POST["email"]."')";
 
   $result = mysql_query($conn,$sql);
-  echo "xxx1";
+  echo "xxx4";
 }
 
 ?>
