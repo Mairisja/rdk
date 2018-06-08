@@ -22,7 +22,8 @@ $password = mysqli_real_escape_string($link, password_hash($_REQUEST['password']
 
 //==============================================//    CHECK DB FOR EXISTING MAIL //================================================
 $mail_check = mysqli_query("SELECT * FROM users WHERE epasts='$email'");
-if ($email != $mail_check){
+if ($email != $mail_check)
+{
 //==============================================//    END OF CHECK DB FOR EXISTING MAIL //================================================
 
 
@@ -30,9 +31,11 @@ if ($email != $mail_check){
 //==============================================//    WRITING TO DB //================================================
 
 	$sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$password')";
-	if(mysqli_query($link, $sql)){
+	if(mysqli_query($link, $sql))
+	{
 	    echo "Records added successfully.";
 	    // header('Location: success.php'); 
+	}
 }
 //==============================================//   END OF  WRITING TO DB //================================================
 
@@ -40,12 +43,7 @@ if ($email != $mail_check){
 else{
 	echo "Jau aizņemts!";
 	    echo "kk3";
-	} else{
-	    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-	    echo "kk4";
 	}
-}
- 
 // close connection
 mysqli_close($link);
 ?>
