@@ -142,7 +142,7 @@
                   </div>
                 </div>
                 
-                <input type="submit" value="post" class="btn btn-info btn-block">
+                <input type="submit" class="btn btn-info btn-block">
               
               </form>
             </div>
