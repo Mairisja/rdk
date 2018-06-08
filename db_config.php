@@ -24,7 +24,7 @@ $email = mysqli_real_escape_string($link, $_REQUEST['email']);
 
  
 // attempt insert query execution
-$sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$password')";
+$sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$output')";
 if(mysqli_query($link, $sql)){
     echo "Records added successfully.";
 } else{
