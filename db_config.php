@@ -17,13 +17,19 @@ $email = mysqli_real_escape_string($link, $_REQUEST['email']);
 $password = mysqli_real_escape_string($link, password_hash($_REQUEST['password'],PASSWORD_DEFAULT));
 
 
- 
-// attempt insert query execution
-$sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$password')";
-if(mysqli_query($link, $sql)){
-    echo "Records added successfully.";
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+ $sql_email_check = "SELCT FROM users WHERE wmail='$email'";
+ $result_mail = mysql_query($link, $sql_email_check);
+ if (mysql_num_rows($result_mail) > 0) {
+ 	$email_error = "Epasts, diemžēl, ir aizņemts!";
+ }
+ else {
+	// attempt insert query execution
+	$sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$password')";
+	if(mysqli_query($link, $sql)){
+	    echo "Records added successfully.";
+	} else{
+	    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+	}
 }
  
 // close connection
