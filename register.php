@@ -1,10 +1,6 @@
 <!-- __________________________________________SESSION START / DB_Conf inclusion  __________________________________________________________________________ -->
 
-<?php
-  // session_start();
-  // include_once 'db_config.php';
-include('db_config.php');
-?> 
+
 
 <!-- __________________________________________END OF SESSION START __________________________________________________________________________ -->
 
@@ -23,6 +19,11 @@ include('db_config.php');
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
+    <?php
+    // session_start();
+    // include_once 'db_config.php';
+    include_once('db_config.php');
+    ?> 
   </head>
 
 <body>
