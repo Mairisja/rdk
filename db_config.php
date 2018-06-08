@@ -16,26 +16,16 @@ $last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
 $email = mysqli_real_escape_string($link, $_REQUEST['email']);
 $password = mysqli_real_escape_string($link, password_hash($_REQUEST['password'],PASSWORD_DEFAULT));
 
-echo "kk1";
 
- $sql_email_check = "SELECT FROM users (epasts) WHERE epasts='$email'";
- $result_mail = mysql_query($link, $sql_email_check);
- if (mysql_num_rows($result_mail) > 0) {
- 	$email_error = "Epasts, diemžēl, ir aizņemts!";
- 	echo $email_error;
- 	echo "kk2";
- }
- else {
-	// attempt insert query execution
-	$sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$password')";
-	if(mysqli_query($link, $sql)){
-	    echo "Records added successfully.";
-	    echo "kk3";
-	} else{
-	    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-	    echo "kk4";
-	}
+$sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$password')";
+if(mysqli_query($link, $sql)){
+    echo "Records added successfully.";
+    echo "kk3";
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    echo "kk4";
 }
+
  
 // close connection
 mysqli_close($link);
