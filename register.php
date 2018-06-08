@@ -27,17 +27,6 @@
 
 <body>
 
-<?php
-
-if (isset($_POST['save'])) {
-  $sql = "INSERT INTO users (vards, uzvards, epasts)
-    VALUES ('".$_POST["first_name"]."','".$_POST["last_name"]."','".$_POST["email"]."')";
-
-  $result = mysql_query($conn,$sq);
-}
-
-?>
-
   <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
@@ -122,6 +111,16 @@ if (isset($_POST['save'])) {
         <div class="container"> <!-- col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4"> -->
           <div class="panel panel-default">
             <div class="panel-body">
+<?php
+
+if (isset($_POST['save'])) {
+  $sql = "INSERT INTO users (vards, uzvards, epasts)
+    VALUES ('".$_POST["first_name"]."','".$_POST["last_name"]."','".$_POST["email"]."')";
+
+  $result = mysql_query($conn,$sq);
+}
+
+?>
               <form action="db_config.php" method="post" role="centered-form">
                 <div class="row">
                   <div class="col-xs-6 col-sm-6 col-md-6">
