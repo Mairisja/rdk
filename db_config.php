@@ -5,8 +5,12 @@
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 // we get submitted data and check if user really submitted it
-if(isset($_GET['first_name'])){
-$user = $_GET['first_name'];
+if(isset($_GET['first_name','last_name','email','password'])){
+$vards = $_GET['first_name'];
+$uzvards = $_GET['last_name'];
+$epasts = $_GET['email'];
+$parole = $_GET['password'];
+// $parole_x2 = $_GET['password_confirmation']
 echo "xxx";
 // make an mysql connection, make sure to edit this
 // $c = mysql_connect("localhost", "root", "GT5364HY"); // host = host name, user = database user, password = database password
@@ -16,7 +20,7 @@ echo "xxx2";
 // escape input from dangerous charachters
 // $user = htmlentities(mysql_real_escape_string($user));
 echo "xxx3";
-mysqli_query($con,"INSERT INTO users(vards,uzvards,epasts) VALUES('blabla','x','y')");
+mysqli_query($con,"INSERT INTO users(vards,uzvards,epasts) VALUES('$vards','$uzvards','$epasts','$parole')");
 echo "xxx3";
 mysqli_commit($con);
 
