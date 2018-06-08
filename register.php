@@ -29,9 +29,9 @@
 <body>
 
 <?php
-  include_once('db_config.php');
-if (isset($_POST['save'])) {
 
+if (isset($_POST['save'])) {
+  include_once('db_config.php');
   $sql = "INSERT INTO users (vards, uzvards, epasts)
     VALUES ('".$_POST["first_name"]."','".$_POST["last_name"]."','".$_POST["email"]."')";
 
