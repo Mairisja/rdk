@@ -17,7 +17,7 @@ $email = mysqli_real_escape_string($link, $_REQUEST['email']);
 $password = mysqli_real_escape_string($link, password_hash($_REQUEST['password'],PASSWORD_DEFAULT));
 
 $sql_check = "SELECT * FROM users WHERE epasts='$email'";
-echo "$sql_check";
+// echo "$sql_check";
 $result_email = mysqli_query($link,$sql_check);
 echo "$result_email";
 	if (mysql_num_rows($result_email)> 0) {
