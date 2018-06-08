@@ -16,7 +16,7 @@ $last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
 $email = mysqli_real_escape_string($link, $_REQUEST['email']);
 $password = mysqli_real_escape_string($link, password_hash($_REQUEST['password'],PASSWORD_DEFAULT));
 echo "KKK0";
-$sql_check = "SELECT * FROM users WHERE epasts='$email'";
+$sql_check = "SELECT * FROM users WHERE epasts=$email";
 echo "KKK01";
 $result_email = mysqli_query($link, $sql_check);
 echo "KKK1";
