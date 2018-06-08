@@ -1,3 +1,7 @@
+<?php
+echo $output;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,11 +16,6 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
-    <?php
-    // session_start();
-    // include_once 'db_config.php';
-    //include_once('db_config.php');
-    ?> 
   </head>
 
 <body>
