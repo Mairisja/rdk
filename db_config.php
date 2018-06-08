@@ -21,7 +21,7 @@ echo "xxx2";
 // $user = htmlentities(mysql_real_escape_string($user));
 echo "xxx3";
 mysqli_query($con,"INSERT INTO users(vards,uzvards,epasts) 
-	VALUES($vards,$uzvards,$epasts)");
+	VALUES('$vards','$uzvards','$epasts')");
 echo "xxx3";
 mysqli_commit($con);
 
