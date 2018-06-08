@@ -27,7 +27,9 @@ if(mysqli_query($link, $sql)){
 mysqli_close($link);
 ?>
 
-
+<?php 
+header('Location: index.php'); 
+?>
 
 
 
