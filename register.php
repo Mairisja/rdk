@@ -142,7 +142,7 @@
                   </div>
                 </div>
                 
-                <input type="submit" name="save" class="btn btn-info btn-block">
+                <button type="submit" name="save" class="btn btn-info btn-block"></button> >
               
               </form>
             </div>
