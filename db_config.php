@@ -4,36 +4,15 @@
 <?php
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
-// we get submitted data and check if user really submitted it
-if(isset($_GET['save'])){
-$vards = $_GET['first_name'];
-$uzvards = $_GET['last_name'];
-$epasts = $_GET['email'];
-$parole = $_GET['password'];
-// $parole_x2 = $_GET['password_confirmation']
-echo "xxx";
-// make an mysql connection, make sure to edit this
-// $c = mysql_connect("localhost", "root", "GT5364HY"); // host = host name, user = database user, password = database password
-$con=mysqli_connect("localhost","root","GT5364HY","rdk_db");
-// mysql_select_db("rdk_db"); // database = mysql database name
-echo "xxx2";
-// escape input from dangerous charachters
-// $user = htmlentities(mysql_real_escape_string($user));
-echo "xxx3";
-mysqli_query($con,"INSERT INTO users(vards,uzvards,epasts) 
-	VALUES('$vards','$uzvards','$epasts')");
-echo "xxx3";
-mysqli_commit($con);
+$conn=mysqli_connect("localhost","root","GT5364HY","rdk_db");
 
-
-
-echo ("Submitted."); 
-
+if (!$conn) {
+	die("Failed to connect : " . mysqli_connect_error());
 }
 else{
-die("You have not submitted anything.");
+	die("Successfully connected")
 }
-echo "xxx4";
+
 ?>
 
 
