@@ -1,20 +1,31 @@
 <!-- __________________________________________CONNECTION TO SQL __________________________________________________________________________ -->
 
-
 <?php
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
-
-$conn=mysqli_connect("localhost","root","GT5364HY","rdk_db");
-
-if (!$conn) {
-	die("Failed to connect : " . mysqli_connect_error());
+/* Attempt MySQL server connection. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
+$link = mysqli_connect("localhost", "root", "GT5364HY", "rdk_db");
+ 
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
 }
-else{
-	die("Successfully connected")
+ 
+// Escape user inputs for security
+$first_name = mysqli_real_escape_string($link, $_REQUEST['first_name']);
+$last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
+$email = mysqli_real_escape_string($link, $_REQUEST['email']);
+ 
+// attempt insert query execution
+$sql = "INSERT INTO users (first_name, last_name, email) VALUES ('$first_name', '$last_name', '$email')";
+if(mysqli_query($link, $sql)){
+    echo "Records added successfully.";
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }
-
+ 
+// close connection
+mysqli_close($link);
 ?>
-
 
 
 
