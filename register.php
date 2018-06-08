@@ -33,7 +33,7 @@
 if (isset($_POST['save'])) {
   $sql = "INSERT INTO users (vards, uzvards, epasts)
     VALUES ('".$_POST["first_name"]."','".$_POST["last_name"]."','".$_POST["email"]."')";
-
+    include_once('db_config.php');
   $result = mysql_query($conn,$sq);
   echo "xxx1";
 }
