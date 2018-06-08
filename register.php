@@ -30,7 +30,7 @@
 
 <?php
 echo "xxx1";
-if (isset($_POST['save'])) {
+if(isset($_POST['save'])) {
   echo "xxx2";
   include_once('db_config.php');
   echo "xxx3";
@@ -157,7 +157,7 @@ if (isset($_POST['save'])) {
                   </div>
                 </div>
                 
-                <button type="submit" name="save" class="btn btn-info btn-block">savee</button>
+                <button type="submit" name="save" method="post" class="btn btn-info btn-block">savee</button>
               
               </form>
             </div>
