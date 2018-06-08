@@ -22,7 +22,7 @@ $password = mysqli_real_escape_string($link, password_hash($_REQUEST['password']
 
 //==============================================//    CHECK DB FOR EXISTING MAIL //================================================
 $mail_check = mysqli_query($link,"SELECT * FROM users WHERE epasts='$email'");
-if ($mail_check == false)
+if ($mail_check != $email)
 {
 //==============================================//    END OF CHECK DB FOR EXISTING MAIL //================================================
 
