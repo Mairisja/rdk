@@ -34,7 +34,7 @@ if ($email != $mail_check)
 	if(mysqli_query($link, $sql))
 	{
 	    echo "Records added successfully.";
-	    // header('Location: success.php'); 
+	    header('Location: success.php'); 
 	}
 }
 //==============================================//   END OF  WRITING TO DB //================================================
