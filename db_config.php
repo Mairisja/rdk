@@ -7,12 +7,12 @@ $link = mysqli_connect("localhost", "root", "GT5364HY", "rdk_db");
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
+
 $input = ($link, $_REQUEST('password'));
 function secured_hash($input)
 {    
 $output = password_hash($input,PASSWORD_DEFAULT);
 return $output;
-echo $output;
 }
 
 // Escape user inputs for security
