@@ -16,9 +16,12 @@
     <script>
         function validate(){
 
-        if(!document.getElementById("password").value==document.getElementById("confirm_password").value)alert("Paroles nesakrīt!");
-        return document.getElementById("password").value==document.getElementById("confirm_password").value;
-       return false;
+            var a = document.getElementById("password").value;
+            var b = document.getElementById("confirm_password").value;
+            if (a!=b) {
+               alert("Paroles nesakrīt! Lūdzu, izlabojiet!");
+               return false;
+            }
         }
     </script>
 
@@ -109,7 +112,7 @@
         <div class="container"> <!-- col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4"> -->
           <div class="panel panel-default">
             <div class="panel-body">
-              <form  action="db_config.php" method="post" class="centered-form">
+              <form onSubmit="return validate();" action="db_config.php" method="post" class="centered-form">
                 <div class="row">
                   <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
