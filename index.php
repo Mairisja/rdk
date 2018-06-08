@@ -22,6 +22,27 @@
   </head>
 
   <body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '353666071826397',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v3.0'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>Copy Code
 
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -54,7 +75,9 @@
                       <div class="col-md-12">
                         <p>Pieslēgties lietojot: </p>
                         <div class="social-buttons">
-                          <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook
+                          <!-- <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook -->
+
+                          <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
                           <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a></a>
                         </div>
                         <p>vai</p>
