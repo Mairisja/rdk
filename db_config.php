@@ -31,5 +31,5 @@ mysqli_close($link);
 ?>
 
 <?php 
-header('Location: index.php'); 
+header('Location: success.php'); 
 ?>
