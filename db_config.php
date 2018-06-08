@@ -18,6 +18,7 @@ function secured_hash($password)
 {    
 $output = password_hash($password,PASSWORD_DEFAULT);
 return $output;
+echo $output;
 }
  
 // attempt insert query execution
