@@ -30,7 +30,7 @@
 
 <?php
 echo "xxx1";
-if(isset($_POST['save'])) {
+if(isset($_POST['first_name'])) {
   echo "xxx2";
   include_once('db_config.php');
   echo "xxx3";
