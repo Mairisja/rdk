@@ -21,8 +21,8 @@ $password = mysqli_real_escape_string($link, password_hash($_REQUEST['password']
 
 
 //==============================================//    CHECK DB FOR EXISTING MAIL //================================================
-$mail_check = mysqli_query($link,"SELECT * FROM users WHERE epasts='$email");
-if ($email = $mail_check ){
+if(($mail_check = mysqli_query($link,"SELECT * FROM users WHERE epasts='$email"))=$email){
+// if ($email = $mail_check ){
 	echo "Fuck, jau aizņemts!";
 	eader('Location: services.php'); 
 	exit();
