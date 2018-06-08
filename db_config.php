@@ -1,13 +1,6 @@
 <!-- __________________________________________CONNECTION TO SQL __________________________________________________________________________ -->
 
 <?php
-$input = ($_REQUEST['password'])
-function secured_hash($input)
-{    
-$output = password_hash(($input,PASSWORD_DEFAULT);
-return $output;
-}
-
 
 $link = mysqli_connect("localhost", "root", "GT5364HY", "rdk_db");
  
@@ -19,10 +12,16 @@ if($link === false){
 $first_name = mysqli_real_escape_string($link, $_REQUEST['first_name']);
 $last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
 $email = mysqli_real_escape_string($link, $_REQUEST['email']);
-$password = mysqli_real_escape_string($link, $output);
+$password = mysqli_real_escape_string($link, $_REQUEST['password']);
+
+function secured_hash($password)
+{    
+$output = password_hash($password,PASSWORD_DEFAULT);
+return $output;
+}
  
 // attempt insert query execution
-$sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$password')";
+$sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$output')";
 if(mysqli_query($link, $sql)){
     echo "Records added successfully.";
 } else{
