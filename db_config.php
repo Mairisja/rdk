@@ -8,7 +8,7 @@ if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
-$input = mysql_real_escape_string($link, $_REQUEST('password'));
+$input = mysql_real_escape_string($link, $_REQUEST['password']);
 function secured_hash($input)
 {    
 $output = password_hash($input,PASSWORD_DEFAULT);
