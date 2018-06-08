@@ -5,7 +5,7 @@
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 // we get submitted data and check if user really submitted it
-if(isset($_GET['first_name'],$_GET['last_name'],$_GET['email'],$_GET['password'])){
+if(isset($_GET['save'])){
 $vards = $_GET['first_name'];
 $uzvards = $_GET['last_name'];
 $epasts = $_GET['email'];
@@ -30,10 +30,9 @@ mysqli_commit($con);
 echo ("Submitted."); 
 
 }
-// else{
-// // else print "you have not submitted anything
-// die("You have not submitted anything.");
-// }
+else{
+die("You have not submitted anything.");
+}
 echo "xxx4";
 ?>
 

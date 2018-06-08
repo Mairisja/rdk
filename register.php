@@ -111,7 +111,7 @@
         <div class="container"> <!-- col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4"> -->
           <div class="panel panel-default">
             <div class="panel-body">
-              <form action="db_config.php" method="get" role="centered-form">
+              <form action="db_config.php" method="post" role="centered-form">
                 <div class="row">
                   <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
@@ -142,7 +142,7 @@
                   </div>
                 </div>
                 
-                <input type="submit" class="btn btn-info btn-block">
+                <input type="submit" name="save" class="btn btn-info btn-block">
               
               </form>
             </div>
