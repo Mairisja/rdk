@@ -32,7 +32,7 @@ if ($email != $mail_check){
 	$sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$password')";
 	if(mysqli_query($link, $sql)){
 	    echo "Records added successfully.";
-	    header('Location: success.php'); 
+	    // header('Location: success.php'); 
 }
 //==============================================//   END OF  WRITING TO DB //================================================
 
