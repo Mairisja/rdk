@@ -9,9 +9,6 @@ $conn=mysqli_connect("localhost","root","GT5364HY","rdk_db");
 if (!$conn) {
 	die("Failed to connect : " . mysqli_connect_error());
 }
-else{
-	die("Successfully connected")
-}
 
 ?>
 
