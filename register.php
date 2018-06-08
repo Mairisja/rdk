@@ -35,6 +35,7 @@ if (isset($_POST['save'])) {
     VALUES ('".$_POST["first_name"]."','".$_POST["last_name"]."','".$_POST["email"]."')";
 
   $result = mysql_query($conn,$sq);
+  echo "xxx1";
 }
 
 ?>
