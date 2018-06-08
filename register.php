@@ -12,6 +12,16 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
+
+    <script>
+        function validate(){
+
+        if(!document.getElementById("password").value==document.getElementById("confirm_password").value)alert("Paroles nesakrīt!");
+        return document.getElementById("password").value==document.getElementById("confirm_password").value;
+       return false;
+        }
+    </script>
+
   </head>
 
 <body>
@@ -126,7 +136,7 @@
                   </div>
                   <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
-                      <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Atkārtota parole">
+                      <input type="password" name="confirm_password" id="confirm_password" class="form-control input-sm" placeholder="Atkārtota parole">
                     </div>
                   </div>
                 </div>
