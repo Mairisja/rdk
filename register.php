@@ -126,7 +126,7 @@ if(isset($_POST['first_name'])) {
         <div class="container"> <!-- col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4"> -->
           <div class="panel panel-default">
             <div class="panel-body">
-              <form  action="db_config.php" method="post" role="centered-form">
+              <form  action="db_config.php" method="post" class="centered-form">
                 <div class="row">
                   <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
@@ -144,7 +144,7 @@ if(isset($_POST['first_name'])) {
                   <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Epasts">
                 </div>
 
-                <div class="row">
+<!--                 <div class="row">
                   <div class="col-xs-6 col-sm-6 col-md-6">
                     <div class="form-group">
                       <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Parole">
@@ -155,10 +155,9 @@ if(isset($_POST['first_name'])) {
                       <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Atkārtota parole">
                     </div>
                   </div>
-                </div>
+                </div> -->
                 
-                <button type="submit" name="save" method="post" class="btn btn-info btn-block">savee</button>
-              
+                <input type="submit" value="Reģistrēties" class="btn btn-info btn-block">
               </form>
             </div>
           </div>
