@@ -7,10 +7,10 @@ $link = mysqli_connect("localhost", "root", "GT5364HY", "rdk_db");
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
- 
-function secured_hash($_REQUEST['password'])
+$input = ($link, $_REQUEST('password'));
+function secured_hash($input)
 {    
-$output = password_hash($_REQUEST['password'],PASSWORD_DEFAULT);
+$output = password_hash($input,PASSWORD_DEFAULT);
 return $output;
 echo $output;
 }
