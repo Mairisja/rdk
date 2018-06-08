@@ -157,7 +157,7 @@ if (isset($_POST['save'])) {
                   </div>
                 </div>
                 
-                <button type="submit" name="save" action="db_config.php" class="btn btn-info btn-block">savee</button>
+                <button type="submit" name="save" action="db_config.php" method="post" class="btn btn-info btn-block">savee</button>
               
               </form>
             </div>
