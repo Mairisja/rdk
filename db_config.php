@@ -8,7 +8,7 @@ if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
-$input = ($link, $_REQUEST('password'));
+$input = mysql_real_escape_string($link, $_REQUEST('password'));
 function secured_hash($input)
 {    
 $output = password_hash($input,PASSWORD_DEFAULT);
@@ -19,12 +19,12 @@ return $output;
 $first_name = mysqli_real_escape_string($link, $_REQUEST['first_name']);
 $last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
 $email = mysqli_real_escape_string($link, $_REQUEST['email']);
-$password = mysqli_real_escape_string($link, $_REQUEST['password']);
+// $password = mysqli_real_escape_string($link, $_REQUEST['password']);
 
 
  
 // attempt insert query execution
-$sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$output')";
+$sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$password')";
 if(mysqli_query($link, $sql)){
     echo "Records added successfully.";
 } else{
