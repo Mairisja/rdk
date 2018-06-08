@@ -25,6 +25,7 @@ if(mysqli_query($link, $sql_check)){
 	mysql_query($sql);
     echo "Records added successfully.";
 } else{
+	header('Location: register.php')
     echo "ERROR: User with this email already exists! " . mysqli_error($link);
 }
  
