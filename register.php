@@ -28,16 +28,6 @@
 
 <body>
 
-<?php
-echo "xxx1";
-if(isset($_POST['first_name'])) {
-  echo "xxx3";
-  $sql = "INSERT INTO users (vards, uzvards, epasts)
-    VALUES ('".$_POST["first_name"]."','".$_POST["last_name"]."','".$_POST["email"]."')";
-
-  $result = mysql_query($conn,$sql);
-  echo "xxx4";
-}
 
 ?>
   <!-- Navigation -->
