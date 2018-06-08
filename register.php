@@ -1,7 +1,3 @@
-<?php
-echo $output;
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
