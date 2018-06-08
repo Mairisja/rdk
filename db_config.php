@@ -17,7 +17,7 @@ $email = mysqli_real_escape_string($link, $_REQUEST['email']);
 $password = mysqli_real_escape_string($link, password_hash($_REQUEST['password'],PASSWORD_DEFAULT));
 
 
- $sql_email_check = "SELCT FROM users WHERE wmail='$email'";
+ $sql_email_check = "SELCT FROM users WHERE epasts='$email'";
  $result_mail = mysql_query($link, $sql_email_check);
  if (mysql_num_rows($result_mail) > 0) {
  	$email_error = "Epasts, diemžēl, ir aizņemts!";
