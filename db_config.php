@@ -5,7 +5,7 @@
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 // we get submitted data and check if user really submitted it
-if(isset($_GET['first_name','last_name','email','password'])){
+if(isset($_GET['first_name'],$_GET['last_name'],$_GET['email'],$_GET['password'])){
 $vards = $_GET['first_name'];
 $uzvards = $_GET['last_name'];
 $epasts = $_GET['email'];
