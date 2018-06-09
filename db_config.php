@@ -20,9 +20,11 @@ $password = mysqli_real_escape_string($conn, password_hash($_REQUEST['password']
 
 $sql = "INSERT INTO users (vards, uzvards, epasts, parole)
 VALUES ('Mairis', '$last_name', '$email', '$password')";
-
+echo "KKK1";
 $mail_check = "SELECT * FROM users WHERE email='$email'";
+echo "KKK2";
 $mail_resluts = mysql_query($conn, $mail_check);
+echo "KKK3";
 if (mysqli_num_rows($mail_check)>0) {
 	echo "Atrasts e-pastu sarakstā!";
 }
