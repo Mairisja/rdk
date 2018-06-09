@@ -22,7 +22,8 @@ $sql = "INSERT INTO users (vards, uzvards, epasts, parole)
 VALUES ('Mairis', '$last_name', '$email', '$password')";
 
 $mail_check = "SELECT * FROM users WHERE email='$email'";
-if ($conn->query($mail_check) = $email) {
+$mail_resluts = mysql_query($conn, $mail_check);
+if (mysqli_num_rows($mail_check)>0) {
 	echo "Atrasts e-pastu sarakstā!";
 }
 else {
@@ -37,3 +38,7 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 ?>
+
+if(mysqli_num_rows($resultCheckUsername)>0){
+            echo "Username already exists<br>";
+          }
