@@ -29,18 +29,13 @@ if (mysqli_num_rows($mail_resluts)>0) {
 	echo "Atrasts e-pastu sarakstā!";
 }
 else {
-	echo "Netika atrasts, varam veikt ierakstu!";
-}
-
-if ($conn->query($sql) === TRUE) {
+	if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    header('Location: success.php'); 
+	} 
+	else {
+	    echo "Error: " . $sql . "<br>" . $conn->error;
+	}
 }
-
 $conn->close();
 ?>
-
-if(mysqli_num_rows($resultCheckUsername)>0){
-            echo "Username already exists<br>";
-          }
