@@ -27,6 +27,7 @@ $mail_resluts = mysqli_query($conn, $mail_check);
 echo "KKK3";
 if (mysqli_num_rows($mail_resluts)>0) {
 	echo "Atrasts e-pastu sarakstā!";
+	header('Location: register.php')
 }
 else {
 	if ($conn->query($sql) === TRUE) {
