@@ -13,10 +13,10 @@ if ($conn->connect_error) {
 
 // GET VALUES
 
-$first_name = mysqli_real_escape_string($link, $_REQUEST['first_name']);
-$last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
-$email = mysqli_real_escape_string($link, $_REQUEST['email']);
-$password = mysqli_real_escape_string($link, password_hash($_REQUEST['password'],PASSWORD_DEFAULT));
+$first_name = mysqli_real_escape_string($conn, $_REQUEST['first_name']);
+$last_name = mysqli_real_escape_string($conn, $_REQUEST['last_name']);
+$email = mysqli_real_escape_string($conn, $_REQUEST['email']);
+$password = mysqli_real_escape_string($conn, password_hash($_REQUEST['password'],PASSWORD_DEFAULT));
 
 $sql = "INSERT INTO users (vards, uzvards, epasts, parole)
 VALUES ('Mairis', '$last_name', '$email', '$password')";
