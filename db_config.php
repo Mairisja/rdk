@@ -22,7 +22,7 @@ $sql = "INSERT INTO users (vards, uzvards, epasts, parole)
 VALUES ('Mairis', '$last_name', '$email', '$password')";
 
 $mail_check = "SELECT * FROM users WHERE email='$email'";
-if ($conn->query($mail_check) === TRUE) {
+if ($conn->query($mail_check) = $email) {
 	echo "Atrasts e-pastu sarakstā!";
 }
 else {
