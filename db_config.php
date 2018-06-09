@@ -21,7 +21,7 @@ $password = mysqli_real_escape_string($conn, password_hash($_REQUEST['password']
 $sql = "INSERT INTO users (vards, uzvards, epasts, parole)
 VALUES ('Mairis', '$last_name', '$email', '$password')";
 echo "KKK1";
-$mail_check = "SELECT * FROM users WHERE email='$email'";
+$mail_check = "SELECT * FROM users WHERE epasts='$email'";
 echo $mail_check;
 $mail_resluts = mysqli_query($conn, $mail_check);
 echo "KKK3";
