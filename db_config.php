@@ -1,51 +1,31 @@
 <?php
-//==============================================//    CONNECTION TO DATABSE INITIALISATION //================================================
-$link = mysqli_connect("localhost", "root", "GT5364HY", "rdk_db");
- 
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
-//==============================================//    END OF CONNECTION TO DATABSE INITIALISATION //================================================
+$servername = "localhost";
+$username = "root";
+$password = "GT5364HY";
+$dbname = "rdk_db";
 
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
 
-
-//==============================================//    ESCAPE USER INPUTS FOR SECURITY REASONS //================================================
+// GET VALUES
 
 $first_name = mysqli_real_escape_string($link, $_REQUEST['first_name']);
 $last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
 $email = mysqli_real_escape_string($link, $_REQUEST['email']);
 $password = mysqli_real_escape_string($link, password_hash($_REQUEST['password'],PASSWORD_DEFAULT));
 
-//==============================================//    END OF ESCAPE USER INPUTS CHECK //================================================
+$sql = "INSERT INTO users (vards, uzvards, epasts, parole)
+VALUES ('$first_name', '$last_name', '$email', '$password')";
 
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
 
-
-//==============================================//    CHECK DB FOR EXISTING MAIL //================================================
-// $mail_check = mysqli_query($link,"SELECT * FROM users WHERE epasts='$email'");
-// if ($mail_check = $email)
-// {
-//==============================================//    END OF CHECK DB FOR EXISTING MAIL //================================================
-
-if ($link->connect_error) {
-    die("Connection failed: " . $link->connect_error);
-} 
-
-//==============================================//    WRITING TO DB //================================================
-
-	$sql = "INSERT INTO users (vards, uzvards, epasts, parole) VALUES ('$first_name', '$last_name', '$email','$password')";
-	if(mysqli_query($link, $sql))
-	{
-	    echo "Records added successfully.";
-	    header('Location: success.php'); 
-	}
-
-//==============================================//   END OF  WRITING TO DB //================================================
-
-
-else{
-	echo "Jau aizņemts!";
-	    echo "kk3";
-	}
-// close connection
-mysqli_close($link);
+$conn->close();
 ?>
