@@ -21,12 +21,14 @@ $password = mysqli_real_escape_string($link, password_hash($_REQUEST['password']
 
 
 //==============================================//    CHECK DB FOR EXISTING MAIL //================================================
-$mail_check = mysqli_query($link,"SELECT * FROM users WHERE epasts='$email'");
-if ($mail_check = $email)
-{
+// $mail_check = mysqli_query($link,"SELECT * FROM users WHERE epasts='$email'");
+// if ($mail_check = $email)
+// {
 //==============================================//    END OF CHECK DB FOR EXISTING MAIL //================================================
 
-
+if ($link->connect_error) {
+    die("Connection failed: " . $link->connect_error);
+} 
 
 //==============================================//    WRITING TO DB //================================================
 
@@ -36,7 +38,7 @@ if ($mail_check = $email)
 	    echo "Records added successfully.";
 	    header('Location: success.php'); 
 	}
-}
+
 //==============================================//   END OF  WRITING TO DB //================================================
 
 
