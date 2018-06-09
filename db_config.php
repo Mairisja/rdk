@@ -25,7 +25,7 @@ $mail_check = "SELECT * FROM users WHERE epasts='$email'";
 echo $mail_check;
 $mail_resluts = mysqli_query($conn, $mail_check);
 echo "KKK3";
-if (mysqli_num_rows($mail_check)>0) {
+if (mysqli_num_rows($mail_resluts)>0) {
 	echo "Atrasts e-pastu sarakstā!";
 }
 else {
